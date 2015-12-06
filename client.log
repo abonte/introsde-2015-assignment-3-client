@@ -1,0 +1,259 @@
+     [echo] callant start-client --> client.PeopleClient in build
+     [echo] **STEP 1**
+     [echo]  WSDL url: http://127.0.1.1:6902/ws/people?wsdl
+     [echo] **STEP 2**
+     [java]  
+     [java] ===========================================================================
+     [java] Request #2: readPersonList
+     [java]  
+     [java] RESPONSE: 
+     [java] ******************
+     [java] id       : 1
+     [java] firstname: Pinco
+     [java] lastname : Palla
+     [java] -----------
+     [java] id               : 155
+     [java] dateRegistered   : 2001-12-12
+     [java] measureType      : height
+     [java] value            : 80
+     [java] measureValueType : Int
+     [java] -----------
+     [java] id               : 705
+     [java] dateRegistered   : 2015-12-12
+     [java] measureType      : weight
+     [java] value            : 100
+     [java] measureValueType : Int
+     [java] ******************
+     [java] id       : 2
+     [java] firstname: AAA
+     [java] lastname : BBB
+     [java] -----------
+     [java] id               : 405
+     [java] dateRegistered   : 2001-12-12
+     [java] measureType      : height
+     [java] value            : 23
+     [java] measureValueType : Int
+     [java] -----------
+     [java] id               : 454
+     [java] dateRegistered   : 2015-01-01
+     [java] measureType      : weight
+     [java] value            : 180
+     [java] measureValueType : Int
+     [java] ******************
+     [java] id       : 3
+     [java] firstname: AAA
+     [java] lastname : BBB
+     [java] ******************
+     [java] id       : 2603
+     [java] firstname: test
+     [java] lastname : Palleto
+     [java] ******************
+     [java] id       : 2703
+     [java] firstname: Pavel
+     [java] lastname : Kucherbaev
+     [java] ******************
+     [java] id       : 4903
+     [java] firstname: Chuck
+     [java] lastname : Norris
+     [java] -----------
+     [java] id               : 704
+     [java] dateRegistered   : 2015-01-01
+     [java] measureType      : height
+     [java] value            : 180
+     [java] measureValueType : Int
+     [java]  
+     [java] ===========================================================================
+     [java] Request #2: readPerson
+     [java]  
+     [java] REQUEST: 
+     [java] id: 1
+     [java]  
+     [java] RESPONSE: 
+     [java] ******************
+     [java] id       : 1
+     [java] firstname: Pinco
+     [java] lastname : Palla
+     [java] -----------
+     [java] id               : 155
+     [java] dateRegistered   : 2001-12-12
+     [java] measureType      : height
+     [java] value            : 80
+     [java] measureValueType : Int
+     [java] -----------
+     [java] id               : 705
+     [java] dateRegistered   : 2015-12-12
+     [java] measureType      : weight
+     [java] value            : 100
+     [java] measureValueType : Int
+     [java]  
+     [java] ===========================================================================
+     [java] Request #3: updatePerson
+     [java]  
+     [java] Person #1 before the update:
+     [java] ******************
+     [java] id       : 1
+     [java] firstname: Pinco
+     [java] lastname : Palla
+     [java] -----------
+     [java] id               : 155
+     [java] dateRegistered   : 2001-12-12
+     [java] measureType      : height
+     [java] value            : 80
+     [java] measureValueType : Int
+     [java] -----------
+     [java] id               : 705
+     [java] dateRegistered   : 2015-12-12
+     [java] measureType      : weight
+     [java] value            : 100
+     [java] measureValueType : Int
+     [java]  
+     [java] REQUEST: 
+     [java] id: 1
+     [java] firstname: Pinco
+     [java]  
+     [java] RESPONSE:
+     [java] code: 0 OK
+     [java]  
+     [java] Person #1 after the update:
+     [java] ******************
+     [java] id       : 1
+     [java] firstname: Pinco
+     [java] lastname : Palla
+     [java] -----------
+     [java] id               : 155
+     [java] dateRegistered   : 2001-12-12
+     [java] measureType      : height
+     [java] value            : 80
+     [java] measureValueType : Int
+     [java] -----------
+     [java] id               : 705
+     [java] dateRegistered   : 2015-12-12
+     [java] measureType      : weight
+     [java] value            : 100
+     [java] measureValueType : Int
+     [java]  
+     [java] ===========================================================================
+     [java] Request #4: createPerson
+     [java]  
+     [java]  
+     [java] REQUEST: 
+     [java] ******************
+     [java] id       : 0
+     [java] firstname: Chuck
+     [java] lastname : Norris
+     [java] -----------
+     [java] id               : 0
+     [java] dateRegistered   : 2015-01-01
+     [java] measureType      : height
+     [java] value            : 180
+     [java] measureValueType : Int
+     [java]  
+     [java] RESPONSE:
+     [java] id created person: 4904
+     [java]  
+     [java] Created Person
+     [java] ******************
+     [java] id       : 4904
+     [java] firstname: Chuck
+     [java] lastname : Norris
+     [java] -----------
+     [java] id               : 706
+     [java] dateRegistered   : 2015-01-01
+     [java] measureType      : height
+     [java] value            : 180
+     [java] measureValueType : Int
+     [java]  
+     [java] ===========================================================================
+     [java] Request #5: deletePerson
+     [java]  
+     [java] REQUEST: 
+     [java] id: 4903
+     [java]  
+     [java] RESPONSE:
+     [java] readPerson(4903): null
+     [java]  
+     [java] ===========================================================================
+     [java] Request #6: readPersonHistory
+     [java]  
+     [java] REQUEST: 
+     [java] id: 1
+     [java] measureType: height
+     [java]  
+     [java] -----------
+     [java] id               : 4
+     [java] dateRegistered   : 1990-09-09
+     [java] measureType      : height
+     [java] value            : 99
+     [java] measureValueType : Int
+     [java] -----------
+     [java] id               : 155
+     [java] dateRegistered   : 2001-12-12
+     [java] measureType      : height
+     [java] value            : 80
+     [java] measureValueType : Int
+     [java]  
+     [java] ===========================================================================
+     [java] Request #7: readMeasureTypes
+     [java]  
+     [java]  
+     [java] RESPONSE:
+     [java] height
+     [java] weight
+     [java]  
+     [java] ===========================================================================
+     [java] Request #8: readPersonMeasure
+     [java]  
+     [java] REQUEST: 
+     [java] id: 1
+     [java] measureType: height
+     [java] mid: 155
+     [java]  
+     [java] RESPONSE:
+     [java] -----------
+     [java] id               : 155
+     [java] dateRegistered   : 2001-12-12
+     [java] measureType      : height
+     [java] value            : 80
+     [java] measureValueType : Int
+     [java]  
+     [java] ===========================================================================
+     [java] Request #10: savePersonMeasure
+     [java]  
+     [java] REQUEST: 
+     [java] id: 1
+     [java] -----------
+     [java] id               : 0
+     [java] dateRegistered   : 2015-12-12
+     [java] measureType      : weight
+     [java] value            : 100
+     [java] measureValueType : Int
+     [java]  
+     [java] RESPONSE:
+     [java] id: 707 OK
+     [java]  
+     [java] -----------
+     [java] id               : 707
+     [java] dateRegistered   : 2015-12-12
+     [java] measureType      : weight
+     [java] value            : 100
+     [java] measureValueType : Int
+     [java]  
+     [java] ===========================================================================
+     [java] Request #9: updatePersonMeasure
+     [java]  
+     [java] REQUEST: 
+     [java] id: 1
+     [java] -----------
+     [java] id               : 155
+     [java] dateRegistered   : 2001-12-12
+     [java] measureType      : height
+     [java] value            : 80
+     [java] measureValueType : Int
+     [java]  
+     [java] RESPONSE:
+     [java] -----------
+     [java] id               : 155
+     [java] dateRegistered   : 2001-12-12
+     [java] measureType      : height
+     [java] value            : 80
+     [java] measureValueType : Int

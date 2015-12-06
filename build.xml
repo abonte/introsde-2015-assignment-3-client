@@ -115,8 +115,13 @@
 	          </target>
 
 	          <target name="start-client" depends="install">
-	          	<echo message="ant start-client client.PeopleClient in ${build.dir}" />
+	          	<record name="client.log" action="start" append="no"/>
+	          	<echo message="callant start-client --> client.PeopleClient in ${build.dir}" />
+	          	<echo message="**STEP 1**"/>
+	          	<echo message=" WSDL url: ${wsdl.location}"/>
+	          	<echo message="**STEP 2**"/>
 	          	<java classname="client.PeopleClient" classpath="${build.dir}" fork="true">
+	          		<arg value="${wsdl.location}"/>
 	          		<arg value="$JAVA_OPTS  -cp" />
 	          		<classpath>
 	          			<path location="build" />
@@ -126,16 +131,20 @@
 	          			</fileset>
 	          		</classpath>
 	          	</java>
+	          	<record name="client.log" action="stop"/>
+	          	<echo message="Created the log file client.log"/>
 	          </target>
 
 	          <property name="java-home" value="/usr/lib/jvm/jdk1.8.0" />
 	          <property name="wsdl.location" value="http://127.0.1.1:6902/ws/people?wsdl" />
 
 	          <target name="generate-client">
+	          	<echo message="execute wsimport on ${wsdl.location}"/>
 	          	<exec executable="${java-home}/bin/wsimport">
 	          		<arg line="-s src -Xdebug -verbose -Xnocompile -keep ${wsdl.location}" />
 	          	</exec>
 	          </target>
+   	
 	          <!-- make sure you have created first the WebContent folder, including a META-INF folder, WEB-INF/web.xml file and WEB-INF/lib folder -->
 	          <target name="create.war" depends="install">
 	          	<war destfile="sdelab06.war" webxml="${web.dir}/WebContent/WEB-INF/web.xml">
