@@ -134,9 +134,10 @@
 	          	<record name="client.log" action="stop"/>
 	          	<echo message="Created the log file client.log"/>
 	          </target>
-
+    
 	          <property name="java-home" value="/usr/lib/jvm/jdk1.8.0" />
-	          <property name="wsdl.location" value="http://127.0.1.1:6902/ws/people?wsdl" />
+	          <property name="wsdl.location" value="https://secure-refuge-6052.herokuapp.com/ws/people?wsdl" />
+   			  <!--<property name="wsdl.location" value="http://127.0.1.1:6902/ws/people?wsdl" /> -->
 
 	          <target name="generate-client">
 	          	<echo message="execute wsimport on ${wsdl.location}"/>

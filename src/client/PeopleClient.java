@@ -243,9 +243,9 @@ public class PeopleClient{
 				c.readPersonHistory(); //Method 6
 				c.readMeasureTypes(); //Method 7
 				c.readPersonMeasure(); //Method 8
-				c.updatePersonMeasure(); //Method 10
 				c.savePersonMeasure(); //Method 9
-
+				c.updatePersonMeasure(); //Method 10
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
