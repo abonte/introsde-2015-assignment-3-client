@@ -37,7 +37,7 @@ public class PeopleClient{
 
 
 	private void readPersonList() {
-		responseTemplate(2, "readPersonList");
+		responseTemplate(1, "readPersonList");
 		System.out.println("RESPONSE: ");
 		List<Person> p_list = people.getPeopleList();
 		first_person_id = p_list.get(0).getIdPerson();
@@ -60,7 +60,7 @@ public class PeopleClient{
 
 	private void updatePerson() {
 		responseTemplate(3, "updatePerson");
-		String name = "Pinco";
+		String name = "Pippo";
 		System.out.println("Person #"+first_person_id+" before the update:");
 		Person p = people.readPerson(first_person_id);
 		printPerson(p);
@@ -122,7 +122,7 @@ public class PeopleClient{
 
 	private void readPersonHistory() {
 		responseTemplate(6, "readPersonHistory");
-		String measureType = "height";
+		String measureType = "weight";
 		System.out.println("REQUEST: ");
 		System.out.println("id: "+first_person_id);
 		System.out.println("measureType: "+measureType);
@@ -166,7 +166,7 @@ public class PeopleClient{
 		measure.setMeasureType("weight");
 		measure.setMeasureValue("100");
 		measure.setMeasureValueType("Int");
-		measure.setDateRegistered("2015-12-12");
+		measure.setDateRegistered("2015-10-12");
 		System.out.println("REQUEST: ");
 		System.out.println("id: "+first_person_id);
 		printMeasure(measure);
@@ -185,7 +185,7 @@ public class PeopleClient{
 		System.out.println("REQUEST: ");
 		System.out.println("id: "+first_person_id);
 		printMeasure(measure_element_first_id);
-		measure_element_first_id.setMeasureValue("80");
+		measure_element_first_id.setMeasureValue("75");
 		System.out.println(" ");
 		System.out.println("RESPONSE:");
 		Holder<HealthMeasureHistory> measure = new Holder<HealthMeasureHistory>(measure_element_first_id);
@@ -200,6 +200,7 @@ public class PeopleClient{
 		System.out.println("id       : "+ person.getIdPerson());
 		System.out.println("firstname: "+ person.getFirstname());
 		System.out.println("lastname : "+ person.getLastname());
+		System.out.println("birthdate : "+ person.getBirthdate());
 		if(person.getCurrentHealth() != null){
 			printCurrentHealth(person.getCurrentHealth());
 		}

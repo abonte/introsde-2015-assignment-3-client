@@ -116,7 +116,7 @@
 
 	          <target name="start-client" depends="install">
 	          	<record name="client.log" action="start" append="no"/>
-	          	<echo message="callant start-client --> client.PeopleClient in ${build.dir}" />
+	          	<echo message="call ant start-client --> client.PeopleClient in ${build.dir}" />
 	          	<echo message="**STEP 1**"/>
 	          	<echo message=" WSDL url: ${wsdl.location}"/>
 	          	<echo message="**STEP 2**"/>
